@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //switch case是进行的值和类型的判断，不会发生隐式类型转换
+    //case后面可以是一个表达式 也可以不写这个值
+    var index = 1;
+    switch(index){
+        case 1:
+        case 2:
+        case 3:
+        case 4:
+        case 5:
+        console.log("weekday");
+        break;
+        case 6:
+        case 7:
+        console.log("weekend")
+        default:
+        console.log("nothing");
+    }
+    //若没有break 则会发生语句的穿透性 所有都会被输出
+
+
+
+    var obj1 = {"username":"zhangsan","age":20};
+    obj1._proto_.sex = 'male';//也可以被for遍历到
+    for(var i in obj1){
+        console.log(i,obj1[i]);
+    }
+
+
+    var arr1 = [1, ,3];
+    for(var j in arr1){
+        console.log(j,arr1[j]);
+    }
+</script>
+</html>

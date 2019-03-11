@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //基本数据类型在操作过程中，会有自动装箱过程，生成临时对象。临时对象在使用完成之后会自动释放。
+    var num = 10;
+    num.toString();
+
+    var num = 10;
+    var numObject = new Number(num);
+    numObject.toString();
+
+    num.p = 10;
+    var t = num.p;
+    console.log(t);
+
+    var num1 = 11.26;
+    var numobj2 = new Number(num1);
+    console.log(numobj2);
+</script>
+<script>
+    var str = "abcde";
+    var strObject = new String(str);
+    //charAt(index)返回特定索引位置的字符
+    strObject.charAt(2);
+
+    //基本数据类型，变量__proto__属性 == 变量的构造函数的prototype属性
+    //num.__proto__ == Number.prototype
+    var num1 = 20;
+    console.log(num1.__proto__);
+    console.log(Number.prototype);//37 38输出完全一样。Number是一个构造函数，prototype是它的属性。
+
+
+    var str = "abcdefgh";
+    //返回特定位置的字符
+    str.charAt(2);
+    //返回特定位置的字符的Unicode码 0 -> 97
+    str.charCodeAt(0);
+    //截取字符串，从0的位置到3的位置的前一个。以下结果是abc
+    str.slice(0,3);
+    str.slice(1,-1);//bcdefg
+    //(截取字符串的起始位置，截取字符串的长度)
+    str.substr(0,3);//abc
+    str.substr(0,-1);//字符串为空
+    //（起始位置，结束位置）
+    //截取字符串。后面参数可以不用写，如果不写则是从开始位置一直截取到最后。
+    //前面的数字大于后面的数字，两个值会互换位置。   如果有超出索引位置 0 - str.length-1 自动截断。
+    str.substring(0,3);//abc
+    str.substring(3,0);//abc
+    //以特定的字符进行分隔。输出数组，将截取出的字符串作为字符元素
+    var str1 = "ab*cd*ef*gh"
+    str1.split("*");
+    str.split("*",2);//只要分隔出的前两个元素
+
+    //只能去掉字符串两边的空格。中间的空格不能去
+    var str = "       abd    ccc    ";
+    str.trim();
+
+    var str1 = "hello";
+    str1.concat("world");
+</script>
+</html>

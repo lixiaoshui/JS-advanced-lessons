@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //如果不用var声明，变量会自动升级为全局变量
+    //其实是不严谨的。如果有一个相同名字的局部变量，无法分清
+    //严格模式下，必须进行显式的声明
+    function fn1(){
+        //'use strict'
+        username = "zhangsan";
+    }
+    fn1();
+    console.log(username);
+
+
+    var a = 1;//a是定义在window对象上的
+    function fn2(){
+        //普通函数的内部this指向window对象
+        //在严格模式下this为undefined
+        'use strict'//this 变成了undefined
+        console.log(this);
+    }
+    fn2();
+</script>
+</html>

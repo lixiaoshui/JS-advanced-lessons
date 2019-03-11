@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function fn1(){
+        //判断this的指向
+        var result = (this === undefined?true:false);
+        return result;
+    }
+    console.log(fn1());//false
+    //如果加上'use strict'则是true
+</script>
+</html>

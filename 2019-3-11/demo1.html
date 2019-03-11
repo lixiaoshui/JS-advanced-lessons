@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- ===先判断类型，再判断值是否相等 -->
+</body>
+<script>
+    var x = "1";
+    //++x先进行运算，然后输出
+    //x++先输出，然后运算
+    console.log(++x);//2
+    console.log(x++);//1
+
+    //字符串的拼接
+    console.log(x += 1);
+
+
+
+    var score = 76;
+    if(score>90){
+        console.log("you");
+    }else if(score>75){
+        console.log("liang");
+    }else if(score>60){
+        console.log("jige");
+    }else{
+        console.log("bujige");
+    }//liang
+    console.log((score>90&&"you")||(score>75&&"liang")||(score>60&&"jige")||"bujige");//liang
+
+
+
+
+    var score = 76;
+    //switch case 做的是全等的判断，值和类型必须均相等
+    switch(true){
+        case score>90:
+        console.log("you");
+        break;
+        case score>80:
+        console.log("liang");
+        break;
+        case score>60:
+        console.log("jige");
+        default:
+        console.log("bujige");
+    }
+</script>
+</html>
