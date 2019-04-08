@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {x:1};
+    Object.defineProperty(obj,'y',{enumerable:false});//定义属性  三个参数，第一个是对象 第二个是属性的名字 第三个是相关的配置项，是对象的形式
+    console.log(obj);
+    for(var i in obj){
+        console.log(i,obj[i]);//x 1
+    }
+
+</script>
+</html>

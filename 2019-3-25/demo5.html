@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // function foo(){
+    //     var arr1 = [];
+    //     for(var i =0;i<10;i++){
+    //         arr1[i] = function(){
+    //             return i;
+    //         }
+    //     }
+    //     return arr1;
+    // }
+    // var arr2 = foo();
+    // arr2[0]();//10
+
+
+    function foo(){
+        var arr1 = [];
+        for(var i =0;i<10;i++){
+            //形成10个作用域，作用域内的J值不相同 并且不共享
+            (function(j){
+                arr1[j] = function(){
+                    return j;
+                }
+            })(i)
+        }
+        return arr1;
+    }
+    var arr2 = foo();
+    arr2[0]();
+</script>
+</html>

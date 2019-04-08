@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {
+        x:0,
+        //test内部的this指向调用该方法的对象
+        test:function(){
+            console.log(this.x);
+        }
+    }
+    obj.test();
+
+
+    var objA = {"objName":"AAA"};
+    var objB = {"objName":"BBB"};
+    objA.foo = function(){
+        console.log(this.objName);//AAA
+    }
+    objA.foo();
+    //方法名.call（对象） 可以切换方法调用的对象
+    //apply（）目前与上述作用相同
+    objA.foo.call(objB);//切换调用方法的对象   让objB来调用这个对象
+    //BBB
+    
+
+    //构造函数的调用   名字的首字母需要大写！！！
+    function Person(username){
+        this.username = username;
+    }
+
+    Person.prototype.sayHi = function(){//大家共有sayHi这个方法 都可以调用
+        console.log(this.username);
+    }
+
+    var person = new Person("zhangsan");
+    console.log(person.__proto__ === Person.prototype);//true
+</script>
+</html>

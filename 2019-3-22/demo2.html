@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var a = 1; //全局变量，所有位置均可访问到
+    function fn1(){
+        console.log(a);//1
+        var b = 2;
+        var c = 3;
+        function fn2(){
+            var c = 30;
+            var d = 4;
+            console.log(c);//30
+        }
+        fn2();
+        console.log(c);//3
+        //console.log(d);//报错
+    }
+    fn1();
+</script>
+</html>

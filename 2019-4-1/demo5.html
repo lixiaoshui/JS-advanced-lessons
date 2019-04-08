@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var o = {
+        _x : 1,//不想访问 在变量前加下划线
+        get x(){
+            return this._x;
+        },//访问x这个属性
+        set x(val){
+            this._x = val;
+        }//set是一个赋值的过程
+    }
+    o.x = 10;
+    console.log(o.x,o._x);//访问时直接用方法的名字就可以，赋值的时候也是这样  //10 10
+</script>
+</html>

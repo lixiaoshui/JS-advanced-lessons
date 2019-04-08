@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function fn1(x){
+        //argumnts获取函数调用时传入的实参，类数组结构
+        for(var i = 0;i<fn1.arguments.length;i++){//arguments 是函数的属性
+            console.log(arguments[i]);//10   5   3
+        }
+        //!!!!!!!!!!函数名.length  表示的是形参的个数!!!!!!!!!!!
+        console.log(fn1.length);//1
+    }
+
+
+    fn1(10,5,3);
+</script>
+</html>

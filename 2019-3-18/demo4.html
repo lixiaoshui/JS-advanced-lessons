@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var objA = {"objName":"AAA"};
+    var objB = {"objName":"BBB"};
+    objA.foo = function(){
+        console.log(this.objName);
+    }
+    //foo切换对象
+    objA.foo();
+    // 方法.call(对象)
+    objA.foo.call(objB);
+
+
+    //原本的this指向，使用Person构造函数实例化得到的对象
+    function Person(username){
+        this.username = username;
+        this.age = age;
+        this.sayHi = function(){
+            console.log(this.username);
+        }
+    }
+    //Person.call(this.username)其具有一个指定的this值和分别的提供的参数（参数的列表）
+    function Student(username,age,sex){
+        Person.call(this,username,age);
+        //方法.call() 方法会被调用一次
+        //Person.apply(this,[username,age])与上一行效果相同 apply用数组，call不用数组，直接写参数
+        this.sex = sex;
+    }
+
+    var person = new Person("zhangsan");
+    var student = Student("lisi",20);
+    console.log(student);
+</script>
+</html>

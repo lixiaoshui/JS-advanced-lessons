@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var userId = 5;
+    document.onclick = function(){
+        console.log(userId);//造成变量的污染，全局变量不好控制，结果为30
+        userId = 10;
+    }
+    //一大段代码
+    if(true){
+        var userId = 30;
+    }
+
+
+
+
+    (function(){
+        if(true){
+            var userId = 30;
+        }
+    })()//变成当前函数的局部变量，对外界没有影响
+</script>
+</html>

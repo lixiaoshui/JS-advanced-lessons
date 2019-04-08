@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //静态词法作用域部分
+    //函数和变量在完成定义之后，作用域都是确定的，和调用形式和调用位置没关系
+    var username = "jack";
+    function foo(){
+        //username = "bill";
+        console.log(username);//jack
+    }
+    function bar(){
+        var username = "mike";
+        foo();
+        console.log(username);//mike
+    }
+    bar();
+</script>
+</html>

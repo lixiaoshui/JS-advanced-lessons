@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    console.log(a);//undefined
+    if(true){
+        var a = 1;
+    }
+    console.log(a);//1
+    //变量和函数重复声明，会有覆盖的作用
+
+
+    console.log(foo);//undefined
+    //该种情况时，仅会对变量进行提升
+    //定义的提升!
+    var foo = function(){
+        console.log("hello world");//undefined
+    }
+
+
+
+
+    //当function前面有var的时候，默认为一个函数表达式 而不是一个函数。函数不提升
+</script>
+</html>

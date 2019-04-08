@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {x:3};
+    function fn1(){
+        function fn2(){
+            console.log(this.x)
+        }
+        return fn2;
+    }
+    obj.fn3 = fn1;
+    obj.fn4 = fn1();
+
+    obj.fn3();
+    obj.fn4();
+
+
+    var obj1 = {
+        x:1,
+        fn1:function(){
+            var that = this;
+            function fn2(){
+                console.log(that.x);
+            }
+            console.log(this.x);
+            fn2();
+        }
+    }
+    obj1.fn1();
+    //多次调用时，函数不能穿透调用
+</script>
+</html>

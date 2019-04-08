@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Person(username,age){
+        this.username = username;
+        this.age = age;
+    }
+    var p = new Person("zhangsan",20);
+    console.log(p instanceof Person);//true
+    console.log(p.__proto__ == Person.prototype);//true
+    console.log(Person.prototype.__proto__ == Object.prototype);//true
+</script>
+</html>
