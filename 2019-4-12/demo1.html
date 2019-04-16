@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {x:0};
+    Object.defineProperty(obj,"y",{
+        value:1,
+        enumerable:true,
+        writable:true,
+        configurable:true//可配置  false的话删不了此属性
+    });//静态方法
+    //获取特定对象的特定属性描述符
+    Object.getOwnPropertyDescriptor(obj,'y');
+    //得到了上面方法的各个属性和属性值
+
+    var obj = {_x:1};
+    Object.defineProperties(obj,{
+        y:{value:2,writable:true,enumerable:true},
+        z:{value:2,writable:true,enumerable:true},
+        x:{
+            get:function(){return this._x;},
+            set:function (val){
+                this._x = val;
+            }
+        }
+    });
+</script>
+</html>

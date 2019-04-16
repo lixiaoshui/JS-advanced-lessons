@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>基于构造函数实现的原型继承</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //构造函数
+    function Person(username,age){
+        this.username = username;
+        this.age = age;
+    }
+    Person.prototype.sayHi = function(){
+        console.log(this.username);
+    }//在原型链上加一个sayHi的方法
+    var person1 = new Person("zhangsan",18);
+    var person2 = new Person("lisi",30);
+    //person  person2 共用sayHi方法，节省内存空间
+    console.log(person.__proto__ == Person.prototype);
+    person1.sayHi();//先在自身上找，没有找到 然后去所有的原型链上找，可以找到sayHi方法并调用
+
+</script>
+</html>

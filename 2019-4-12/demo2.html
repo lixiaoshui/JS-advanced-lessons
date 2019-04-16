@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var o1 = {};
+    Object.defineProperty(o1,'x',{
+        value:1,
+        writable:true
+    });
+    //Object.create(o1) 以o1为原型对象 生成一个新对象
+    var o2 = Object.create(o1);
+    console.log(o2.__proto__ == o1);//true  o1是o2的原型对象
+    o2.x = 2;
+    //delete删除属性时，只能删除自身所有的属性
+    delete o2.x;
+    console.log(o2.x);
+
+    //o2.__proto__与o1是完全相同的对象的引用
+    //改变其中一个，另一个也随之改变
+    o2.__proto__.x = 3;//改变原型链上的值
+    console.log(o2.x);  
+    console.log(o1.x); 
+</script>
+</html>

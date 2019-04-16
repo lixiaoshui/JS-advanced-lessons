@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var obj = {z:3};
+    console.log(obj.__proto__ == Object.prototype); //true
+
+    //obj.__proto__ == Object.prototype
+    //Object.prototype.__proto__ == null
+    //所有原型链的尽头都是null
+    // prototype是在构造函数中
+    console.log(obj.__proto__.__proto__);//null   到头变成null
+
+
+    var obj1 = {x:1};
+    var obj2 = Object.create(obj1);
+    console.log(obj2.__proto__);//{x:1}
+    console.log(obj2.__proto__.__proto__);//Object的prototype
+    console.log(obj2.__proto__.__proto__.__proto__);//null
+</script>
+</html>

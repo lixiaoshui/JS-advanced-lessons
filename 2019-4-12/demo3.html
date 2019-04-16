@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //javascript是基于对象的继承方式
+    var obj = {
+        num:1,
+        str:"hi",
+        sayHi:function(){
+            console.log(this.str);
+        }
+    };
+    var newObj = Object.create(obj);
+    console.log(newObj.__proto__ == obj);
+    console.log(newObj.num);
+    newObj.sayHi();
+</script>
+</html>
