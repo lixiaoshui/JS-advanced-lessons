@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>量词</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        数量词：
+        a?  表示之前的字符出现0次或者1次
+        a+  表示之前的字符出现1次或者多次
+        a*  表示之前的字符出现0次或者多次
+        x{min,max}
+    */
+    var reg1 = /abc?/gi;
+    var str1 = "abc ab kkk";
+    str1.replace(reg1,"x");//x x kkk
+
+    var reg2 = /abc+/gi;
+    var str2 = "abc abccc abccccc ab";
+    str2.replace(reg2,"x");//x x x ab
+
+
+    var reg3 = /abc{1,3}/gi;
+    var str3 = "abc abcc abccc abcccc";
+    str3.replace(reg3,"x");//x x x xc
+</script>
+</html>

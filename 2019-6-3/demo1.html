@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Array.from()  Array.of()
+    //Array.from() 将类数组结构转化为数组（类数组结构有length属性）
+    console.log(Array.from("abcdefg"));
+    function fn1(){
+        Array.from(arguments);//以数组的形式输出 每个字符之间都分开
+    }
+    fn1(2,3,4);
+    //!!!!!!!!!!!!!!!!!!!!!!!!!!形参数量大于实参  怎么获取到实参   用arguments!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+    //Array.of()将单个的元素转化为数组
+    Array.of(1,2,3);//(3)[1,2,3]把零散的元素生成为数组
+
+</script>
+</html>

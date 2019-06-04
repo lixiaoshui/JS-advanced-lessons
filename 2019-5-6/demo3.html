@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>集合</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        [xyz]从中括号的字符集合中任取一个字符
+        [^xyz]排除中括号中字符集合中的字符。即两者是相反的
+    */
+    var str = "atf btf ktf";
+    var reg = /[^abc]tf/gi;//表示不是abc + tf中的一个才能被检索到
+    console.log(str.match(reg));
+
+    
+</script>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>捕获和冒泡</title>
+    <style>
+        #div1{
+            width:500px;
+            height: 400px;
+            background: red;
+            margin:0 auto;
+        }
+        #div2{
+            width:300px;
+            height: 300px;
+            background: blue;
+            margin:0 auto;
+        }
+        #div3{
+            width: 150px;
+            height: 150px;
+            background: yellow;
+            margin: 0 auto;
+        }
+        #div4{
+            width: 100px;
+            height: 100px;
+            background: pink;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="div2">
+            <div id="div3">
+                <div id="div4"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    /*
+        事件的冒泡和捕获的过程
+        冒泡处理过程从内往外依次触发事件
+
+        捕获的处理过程，从外往内依次触发事件
+        e.target  事件的根源DOM对象，最里面的元素
+        e.currentTarget   当前触发事件的DOM对象
+
+        e.stop
+    */
+    var div1 = document.getElementById("div1");
+    var div2 = document.getElementById("div2");
+    var div3 = document.getElementById("div3");
+    var div4 = document.getElementById("div4");
+    div1.addEventListener("click",function(e){
+        console.log(e.target);
+        console.log(e.currentTarget);
+        console.log("div1被点击了");
+    },false);
+    div2.addEventListener("click",function(e){
+        console.log(e.target);
+        console.log(e.currentTarget);
+        console.log("div2被点击了");
+    },false);
+    div3.addEventListener("click",function(e){
+        console.log(e.target);
+        console.log(e.currentTarget);
+        console.log("div3被点击了");
+    },false);
+    div4.addEventListener("click",function(e){
+        e.stopPropagation();//是否组织冒泡或捕获
+        console.log(e.bubbles);//true看看当前是什么  获取是否为冒泡 冒泡返回true   捕获返回false
+        console.log(e.cancelable);//是否应用了preventDefault
+        console.log(e.cancelBubble);//是否阻止冒泡或捕获    和stopPropagation   是一个布尔类型 true false
+        console.log(e.target);
+        console.log(e.currentTarget);
+        console.log("div4被点击了");
+    },false);
+    //默认是false 冒泡执行并显示    true的时候是捕获，从上到下依次执行
+</script>
+</html>

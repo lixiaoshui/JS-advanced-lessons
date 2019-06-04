@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>有函数嵌套的this使用 1软绑定</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var point = {
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            var that = this;//将指向moveTo的this转存给that 下文再用that就是指向moveTo的this  一般称之为软绑定
+            function moveToX(x){
+                console.log(this);//window
+                this.x = x;
+            }
+            function moveToY(y){
+                this.y = y;
+            }
+            moveToX(x);
+            moveToY(y);
+        }
+    }
+    /*对象内部的函数存在嵌套关系的时候，内部函数的this指向window对象*/
+    point.moveTo(10,10);
+    console.log(point);//0 0ss
+</script>
+</html>

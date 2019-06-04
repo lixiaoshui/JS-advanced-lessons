@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>边界</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //匹配的是开始的位置  ^a 表示匹配开始为a的字符串
+    var reg1 = /^a[0-9]/gi;
+    var str1 = "a1b2c3";
+    console.log(str1.match(reg1));//a1
+
+    //$ 匹配结束的位置 (某个字符+$)
+    var reg2 = /[0-9]z$/gi;
+    var str2 = "abcd8z";
+    var str2_2 = "bhbhbskfh9";
+    console.log(str2.match(reg2));//8z
+    console.log(str2_2.match(reg2));//null
+
+    console.log(str2.test(reg2));//true
+    console.log(str2_2.test(reg2));//false
+</script>
+</html>

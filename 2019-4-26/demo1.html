@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var superObj = {
+        x:1,
+        y:2
+    };
+    var subObj_First = Object.create(superObj);
+    var subObj_Second = Object.create(superObj);
+    subObj_First.__proto__.x = 5;//改变原型上的数据
+    console.log(subObj_Second.x);
+
+    var obj={
+        x:1,
+        y:2
+    };
+    var obj1 = Object.create(obj);
+    var obj2 = Object.create(obj);
+    obj1.x=3;
+    console.log(obj2.x)//1  没有改变原型链上的值
+
+    obj1.__proto__.x = 3;
+    console.log(obj2.x);//3 改变了原型链上的值
+</script>
+</html>

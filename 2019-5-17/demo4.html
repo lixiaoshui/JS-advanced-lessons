@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img src="http://pic.58pic.com/58pic/15/68/59/71X58PICNjx_1024.jpg" alt="">
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    $("img").mouseover(function(){
+        // this.style.border="1px solid red";//可以出来效果 但是不推荐这样写
+        $(this).css("border","5px solid red");
+    })
+    $("img").mouseout(function(){
+        // this.style.border="1px solid red";
+        $(this).css("border","0px");
+    })
+</script>
+</html>

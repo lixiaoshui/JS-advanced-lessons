@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let name = "lily";
+    /*
+        ES6里面对象的结构进行了简化，属性可以写成变量的形式，函数省略function，函数名（）{}
+    */
+    let obj = {
+        name,
+        fn1(){
+            console.log(this.name);
+        }
+    }
+
+    let bar = "foo";
+    let obj1 = {
+        [bar]:"male"//加中括号把bar变成一个变量
+    }
+    console.log(obj1);//{foo:"male"}
+
+    
+    let obj2 = {username:"zhangsan"};
+    let obj3 = {age:20};
+    console.log(Object.assign(obj2,obj3));//将两个对象(必须是可枚举的对象)合并为一个新的对象
+    console.log(obj2.keys());//键名
+    console.log(obj2.values());//键值
+    console.log(obj2.entries());//
+</script>
+</html>

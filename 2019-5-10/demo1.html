@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>捕获组</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        分组可以看做当前正则表达式的子规则，分组匹配得到的内容，可以在exec方法调用的返回结果中查看
+    */
+    var reg1 = /(ab\d)\d/gi;
+    var str = "ab41ef12";
+    var result = reg1.exec(str);
+    console.log(result);//ab41  ab4    注意还要返回小括号中的东西
+    var reg2_1 = /(ab\d)(\def)\d/gi;
+    var result2 = reg2_1.exec(str);
+    console.log(result2);//ab41ef1  ab4 1ef
+
+    //反向引用 通过 \m   来引用前面出现的分组（m表示前面出现的第几个分组）
+    var reg2 = /(ss)a\1/gi;
+    //var reg3 = /(\d)a(\d)/gi;//两种写法效果一样
+
+    var str2 = "ssassji";
+    var result3 = str2.replace(reg2,"x");
+    console.log(result3);
+</script>
+</html>

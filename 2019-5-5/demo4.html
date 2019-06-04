@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>date的构造方法</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var minisecond = Date.parse("2019-05-05");
+    console.log(minisecond);
+    var date1 = new Date(minisecond);
+    console.log(date1);
+
+    var date2 = new Date();
+    var second2 = Date.parse(date2);
+    console.log(second2 > minisecond);
+
+
+    var reg1 = /[bcf]at/gi;
+    var reg2 = new RegExp(/[bcf]at/,"gi");
+    var reg3 = new RegExp("[bcf]at","gi");
+    console.log("a fAt bat,a fAt cat".match(reg1));
+
+    var str1 = "fat Fat bat cat hhhhh lll";
+    console.log(str1.match(reg1));
+</script>
+</html>

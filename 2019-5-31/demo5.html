@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let [x,y] = ['a','b'];
+    // let [y,x] = [x,y];
+    console.log(x,y);//a b
+
+    function example(){
+        return [1,2,3];
+    }
+    let [a,b,c] = example();
+    console.log(a,b,c);//1 2 3
+
+
+
+    let json1 = {
+        "username":"zhangsan",
+        "courseList":["shuxue","english","CSS3","javasript"],
+        "age":20
+    }
+    /*考试会考！！！！！
+        JSON MATH都是对象，没有构造函数
+        JSON.parse()转化回去
+    */
+    let jsonStr = JSON.stringify(json1);
+    console.log(jsonStr);
+    json1 = JSON.parse(jsonStr);
+
+    let {username,age} = json1;
+    console.log(username,age);//zhangsan  直接把username提取出来
+</script>
+</html>

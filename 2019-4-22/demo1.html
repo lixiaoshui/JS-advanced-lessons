@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>一般函数中的this</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //1、非严格模式下，this指向window对象
+    //2、严格模式下，this是undefined
+    //3、this是谁，取决于函数调用的主体是谁
+    var x = 10;
+    console.log(window.x);
+    function thisTest(){
+        console.log(this);
+        console.log(this === window);
+    }
+    thisTest();//谁调用this，this指向的就是谁
+
+    function thisTest1(){
+        'use strict';
+        console.log(this);
+        return this===undefined ? true : false;
+    }//可以判断当前是否为严格模式
+    thisTest1();
+</script>
+</html>

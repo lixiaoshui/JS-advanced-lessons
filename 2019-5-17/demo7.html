@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #container{
+            height:500px;
+            width: 800px;
+            margin: 0 auto;
+            border: 1px solid red;
+
+        }
+        img{
+            width: 150px;
+        }
+        #btnlist{
+            width:1000px;
+            margin:0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="http://pic.58pic.com/58pic/15/68/59/71X58PICNjx_1024.jpg" alt="" id="img1">
+    </div>
+    <div>
+        <button id="after">after</button>
+        <button id="insertafter">insertafter</button>
+        <button id="before">before</button>
+    </div>
+</body>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    /*
+        1.向特定元素的后面插入新的节点
+        after（）  insertafter（）
+        2.向特定元素的前面插入新的节点
+        before   insertBefore（）
+        3.向特定元素标签内部最后的位置添加新的节点
+        append（）   appendTo（）
+        4.向特定元素标签内部最前面的位置添加新的节点
+        prepend()    prependTo()
+    */
+$("after").click(function(){
+    var $img2 = $("<img src='2.jpg' />");
+    $("img1").after($img2);
+})
+$("insertafter").click(function(){
+    var $img2 = $("<img src='2.jpg' />");
+    $img2.insertafter($("img1"));
+})
+$("#before").click(function(){
+    var $img2 = $("<img src='2.jpg' />");
+    $("img1").before($img2);
+})
+</script>
+</html>

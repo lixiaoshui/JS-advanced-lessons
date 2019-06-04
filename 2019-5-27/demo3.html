@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">jq ajax</button>
+</body>
+<script src="https://jquery.com/jquery-3.1.1.min.js"></script>
+<script>
+    //在前端页面实现jQuery ajax请求
+    //ajax请求指明请求的后端程序的地址
+    //后端程序接收到请求，做出相应
+    //前端接收后端程序的响应内容，并在前端使用
+    //前后端文件必须都放在服务器上面，如果是本地的文件则没有办法访问
+
+
+    //ajax实现页面的局部刷新
+    $("btn").click(function(){
+        $.ajax({
+            url:"./server.php",//请求的后端的地址
+            type:"get",//get请求是直接从后台获取数据
+            success:function(data){
+                $("#title").html(data);
+                console.log(data);
+            },
+            error:function(err){
+                console.log(err);
+            }
+        })
+    })
+</script>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>正则表达式</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+        /正则表达式的文本/正则表达式的标识符
+        [bcf]指的匹配中括号中任意的字符
+        在bcf中任意取一个字符加上at 然后在表达式中检索
+
+        标识符：
+        g全局的检索，获取的所有的匹配项还是只获取第一个。  没有g的时候。只做一次检索
+        i表示是否忽略大小写（i表示忽略）
+    */
+    
+    //三种定义方式
+    var reg1 = /[bcf]at/i;
+    var reg2 = new RegExp(/[bcf]at/,"gi");
+    var reg3 = new RegExp("[bcf]at","gi");
+    var str = "fat cat Bat bat At hhh llllll";
+    var arr = str.match(reg1);
+    console.log(arr);
+</script>
+</html>

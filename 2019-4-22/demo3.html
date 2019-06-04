@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>构造函数中的this对象</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function Point(x,y){
+        this.x = x;
+        this.y = y;//14 15行是new的时候自动给出的
+        this.moveTo = function(x,y){
+            this.x = x;
+            this.y = y;
+        }
+    }
+    var p = new Point(10,10);
+    //1、this指向函数调用的主体
+    p.moveTo(15,15);
+</script>
+</html>

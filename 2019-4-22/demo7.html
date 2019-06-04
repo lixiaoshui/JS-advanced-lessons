@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>嵌套函数中的this 3使用Function.prototype.bind</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var point = {
+        x:0,
+        y:0,
+        moveTo:function(x,y){
+            function moveToX(x){
+                this.x = x;
+            }
+            //moveToX.__proto__ == Function.prototype
+            function moveToY(y){
+                this.y = y;
+            }
+            //函数.bind（对象）切换函数的调用主体，生成了一个新的函数，并且不会立即执行
+            moveToX.bind(this)();
+            moveToY.bind(this)();//硬绑定
+        }
+    }
+    point.moveTo(10,10);
+    console.log(point);//用bind生成一个新的函数
+
+    // console.log(Function.prototype);
+</script>
+</html>
