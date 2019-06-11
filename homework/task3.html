@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/tab.css">
+	
+</head>
+<body>
+	<div class="logincontainer" id="logincontainer" style="margin: 0 auto;">
+		<div class="tabtitle">
+			<div class="login-tab saomalogin active">扫码登录</div>
+			<div class="login-tab userlogin">帐户登录</div>
+		</div>
+		<div class="tab-item">
+			<img src="img/show.png">
+		</div>
+		<div class="tab-item" style="display: none;">
+			<div class="inputcontainer">
+				<label for="loginname" class="login-label"></label>
+				<input id="loginname" type="text" class="itxt" name="loginname" tabindex="1" autocomplete="off" placeholder="邮箱/用户名/已验证手机">
+			</div>
+			<div class="inputcontainer">
+				<label for="loginname" class="login-label pwd"></label>
+				<input id="pwd" type="text" class="itxt" name="pwd" tabindex="1" autocomplete="off" placeholder="密码">
+			</div>
+			<div class="loginbtn">
+				<a href="javascript:;" class="btn-img btn-entry" id="loginsubmit" tabindex="6" clstag="pageclick|keycount|201607144|3" style="outline: rgb(109, 109, 109) none 0px;">登&nbsp;&nbsp;&nbsp;&nbsp;录</a>
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+    var log = document.getElementsByClassName('login-tab');
+	var tab = document.getElementsByClassName('tab-item');
+    var input = document.getElementsByTagName('input');
+	for(var i=0;i<tab.length;i++){
+		(function(j){
+			log[0].onmouseover = function(){
+				tab[(j+1)%tab.length].style.display = 'block';
+				tab[j].style.display = 'none';
+				log[0].className = 'login-tab saomalogin active';
+				log[1].className = 'login-tab userlogin';
+			}
+			log[1].onmouseover = function(){
+				tab[j].style.display = 'block';
+				tab[(j+1)%tab.length].style.display = 'none';
+				log[0].className = 'login-tab saomalogin';
+				log[1].className = 'login-tab userlogin active';
+			}
+		}(i))
+	}
+	(function(j){
+		input[j].onfocus = function(){
+			input[j].onblur = function(){
+				if(input[j].value == ''){
+					alert('用户名不能为空');
+				}
+			}
+		}
+		input[j+1].onfocus = function(){
+			input[j+1].onblur =function(){
+				if(input[j+1].value == ''){
+					alert('密码不能为空');
+				}
+			}
+		}
+	}(0))
+</script>
+</html>

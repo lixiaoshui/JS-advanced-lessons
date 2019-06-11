@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //使用static方法(){} 来添加静态方法
+    //静态方法通过类进行调用
+    //静态方法内部的this指向类本身  
+    class Point{
+        constructor(){
+            this.x = 1;
+            this.y = 2;
+        }
+        static showPoint(){
+            console.log(this);
+        }
+    }
+    Point.showPoint();//通过类来完成调用  调用之后仍然是Point类整体
+</script>
+</html>

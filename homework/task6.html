@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            calculate task6
+        </title>
+        <meta http-equiv="Content-Type" content="text/html;charaset = utf-8" />
+        <style type="text/css">
+            body {
+                font:bolder 26px 楷体;
+            }
+            #result {
+                text-align:right;
+            }
+            table,td {
+                border:1px solid #C0C0C0;
+            }
+            td {
+                padding:10px;
+            }
+            button {
+                width:50px;
+                height:50px;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td colspan="3" id="result">
+                    0
+                </td>
+                <td>
+                    <button type="button" value="C">
+                        C
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" value="1" onclick="showData(this);">
+                        1
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="2">
+                        2
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="3">
+                        3
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="+">
+                        +
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" value="4">
+                        4
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="5">
+                        5
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="6">
+                        6
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="-">
+                        -
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" value="7">
+                        7
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="8">
+                        8
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="9">
+                        9
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="*">
+                        *
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="button" value="0">
+                        0
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value=".">
+                        .
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="=">
+                        =
+                    </button>
+                </td>
+                <td>
+                    <button type="button" value="/">
+                        /
+                    </button>
+                </td>
+            </tr>
+        </table>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        $("button").mouseover(function(){
+            $(this).css("box-shadow","3px 3px 3px #eee");
+        })
+        $("button").mouseout(function(){
+            $(this).css("box-shadow","0 0 0 white");
+        })
+        $("button[value='C']").each(function(){
+            $('button').click(function(){
+                var inputVal = $(this).val();
+                if($("#result").text()==0){
+                    $("#result").html(inputVal);
+                }
+                else{
+                    $('#result').append(inputVal);
+                    if(inputVal=='+'|| inputVal=='-'|| inputVal=='*'|| inputVal=='/'){
+                        var str = $('#result').text();
+                        len = str.length;
+                        fir = Number(str.substring(0,len-1));
+                        fuhao = str.substring(len-1,len);
+                    }
+                    else if(inputVal=='='){
+                        var str1 = $('#result').text();
+                        len1 = str1.length;
+                        var sec = Number(str1.substring(len,len1-1));
+                        switch(fuhao){
+                        case '+':result = fir + sec;break;
+                        case '-':result = fir - sec;break;
+                        case '*':result = fir * sec;break;
+                        case '/':result = (fir/sec).toFixed(2);break;
+                        }
+                        $("#result").text(result);
+                    }
+                }
+            })
+        })
+        $("button[value='C']").click(function(){
+            $("#result").text('0')
+        })
+    </script>
+</html>

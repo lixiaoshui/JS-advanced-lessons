@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    /*
+    不需要new
+    生成的变量是唯一的
+    经常作为对象的属性，永远不会重名
+    */
+    let s1 = Symbol("s1");
+    let s2 = Symbol("s2");
+    let s3 = Symbol("s1");
+    console.log(s1 == s3);//false
+
+    let obj = {};
+    obj[s1] = "hello";
+    let obj1 = {
+        [s1]:"world"  //一定要给属性名加中括号！
+    }
+    console.log(obj[s1]);//hello
+    //跟字符串输出的结果是一样的，不同点是只得到了唯一的一个值，从来不会重名
+
+
+    /*
+        Symbol作为对象的属性名，永远不会重复
+        使用方法：
+        一、对象[symbol]
+        二、{
+            [symbol]:属性值
+        }
+    */
+</script>
+</html>
